@@ -1,1 +1,8 @@
 *.pyc
+*.d
+*.so
+*.pcm
+*_org
+*.root
+*.tar
+results_*
