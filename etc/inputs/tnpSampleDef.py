@@ -5,7 +5,8 @@ from libPython.tnpClassUtils import tnpSample
 #eosDir2 = 'eos/cms/store/group/phys_egamma/tnp/80X/PhoEleIDs/v2/'
 #eosDirREC = 'eos/cms/store/group/phys_egamma/tnp/80X/RecoSF/RECOSFs_2016/'
 #eosWinter17 = 'eos/cms/store/group/phys_egamma/tnp/80X/PhoEleIDs/Moriond17_v1/'
-eosMoriond18 = '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/'
+#eosMoriond18 = '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/'
+eosMoriond18 = '/afs/cern.ch/work/v/vhegde/public/EGamma_v3/withSUSYids_v1/EGamma_ntuples/Moriond18_V1/'
 
 Moriond18_94X = {
     ### MiniAOD TnP for IDs scale factors

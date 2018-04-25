@@ -18,6 +18,6 @@ python tnpEGM_fitter.py etc/config/settings_ele.py --flag $myWP --doFit --altSig
 echo "77777777777777 alternate BG fits 77777777777777"
 python tnpEGM_fitter.py etc/config/settings_ele.py --flag $myWP --doFit --altBkg
 echo "======================= Summing it up ================"
-python tnpEGM_fitter.py etc/config/settings_ele.py --flag $myWP --sumUp
+#python tnpEGM_fitter.py etc/config/settings_ele.py --flag $myWP --sumUp
 
 
