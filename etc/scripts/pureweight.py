@@ -18,7 +18,7 @@ for sName in tnpSamples.Moriond18_94X.keys():
     trees['pho'] = 'tnpPhoIDs'
 #    trees['rec'] = 'GsfElectronToSC'
     for tree in trees:
-        dirout =  '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/PU/mc-V2-customW/'
+        dirout =  'root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/PU/mc-V2-customW/'
         mkdir(dirout)
         
         if   puType == 0 : sample.set_puTree( dirout + '%s_%s.pu.puTree.root'   % (sample.name,tree) )
