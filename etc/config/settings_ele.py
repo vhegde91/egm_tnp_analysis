@@ -90,7 +90,7 @@ biningDef = [
 ########## Cuts definition for all samples
 #############################################################
 ### cut
-cutBase   = 'tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && el_q*tag_Ele_q < 0'
+cutBase   = 'tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && el_q*tag_Ele_q < 0 && ((( abs(el_eta) < 0.8 && el_pt >=5 && el_pt < 10 && el_MVA94Xnoiso > (0.488)) || ( abs(el_eta) < 0.8 && el_pt >=10 && el_pt < 25 && el_MVA94Xnoiso > (-0.788 + (0.148/15.)*(el_pt-10.))) || ( abs(el_eta) < 0.8 && el_pt >= 25 && el_MVA94Xnoiso > -0.640) || ( abs(el_eta) >= 0.8 && abs(el_eta) < 1.479 && el_pt >=5 && el_pt < 10 && el_MVA94Xnoiso > (-0.045)) || ( abs(el_eta) >= 0.8 && abs(el_eta) < 1.479 && el_pt >=10 && el_pt < 25 && el_MVA94Xnoiso > (-0.850 + (0.075/15.)*(el_pt-10.))) || ( abs(el_eta) >= 0.8 && abs(el_eta) < 1.479 && el_pt >= 25 && el_MVA94Xnoiso > -0.775) || ( abs(el_eta) >= 1.479 && abs(el_eta) < 2.5 && el_pt >=5 && el_pt < 10 && el_MVA94Xnoiso > (0.176)) || ( abs(el_eta) >= 1.479 && abs(el_eta) < 2.5 && el_pt >=10 && el_pt < 25 && el_MVA94Xnoiso > (-0.81 + (0.077/15.)*(el_pt-10.))) || ( abs(el_eta) >= 1.479 && abs(el_eta) < 2.5 && el_pt >= 25 && el_MVA94Xnoiso > -0.733)))'
 
 # can add addtionnal cuts for some bins (first check bin number using tnpEGM --checkBins)
 additionalCuts = { 
