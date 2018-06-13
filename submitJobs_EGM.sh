@@ -5,8 +5,15 @@ tar cf egm_tnp_analysis.tar Cert_294927-306462_13TeV_PromptReco_Collisions17_JSO
 exeAtWorker="workerEGM.sh"
 filesToTransfer="egm_tnp_analysis.tar"
 
-for i in passingVeto94X passingLoose94X passingMedium94X passingTight94X passingMVA94Xwp90noiso passingMVATightNew2 passingMVAVLooseNew passingMVAVLooseFONew
+#for i in passingVeto94X passingLoose94X passingMedium94X passingTight94X passingMVA94Xwp90noiso passingMVATightNew2 passingMVAVLooseNew passingMVAVLooseFONew
 #for i in passingMVA94Xwp90noiso passingVeto94X
+#for i in passingMVAVLooseNew passingMVAVLooseFONew passingMVAVLooseTightIP2DMini passingMVAVLooseTightIP2DMini2 passingMVAVLooseTightIP2DMini4
+#for i in passingMVATightNewTightIP2D3D
+#for i in passingMultiIsoM passingMultiIsoT passingMultiIsoEmu passingConvIHit0
+#for i in passingMVATightNew2IP2D3DIDEmu
+#for i in passing3Qagree2
+#for i in passingMVAVLooseNew passingMVAVLooseNewIP2D passingMVAVLooseFONew passingMVAVLooseFONewIP2DIDEmu
+for i in passingConvIHit1 #passingMVAVLooseNew passingMVAVLooseTightIP2DMini passingMVAVLooseTightIP2DMini2 passingMVAVLooseTightIP2DMini4
 do
     echo "Submitting job to get SF for "$i
     jdl_file="jdl_EGM_SF_${i}_job.jdl"
