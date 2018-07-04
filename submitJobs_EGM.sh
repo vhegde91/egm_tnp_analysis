@@ -10,10 +10,12 @@ filesToTransfer="egm_tnp_analysis.tar"
 #for i in passingMVAVLooseNew passingMVAVLooseFONew passingMVAVLooseTightIP2DMini passingMVAVLooseTightIP2DMini2 passingMVAVLooseTightIP2DMini4
 #for i in passingMVATightNewTightIP2D3D
 #for i in passingMultiIsoM passingMultiIsoT passingMultiIsoEmu passingConvIHit0
+for i in passingMultiIsoNew passingConvIHit1
 #for i in passingMVATightNew2IP2D3DIDEmu
 #for i in passing3Qagree2
 #for i in passingMVAVLooseNew passingMVAVLooseNewIP2D passingMVAVLooseFONew passingMVAVLooseFONewIP2DIDEmu
-for i in passingConvIHit1 #passingMVAVLooseNew passingMVAVLooseTightIP2DMini passingMVAVLooseTightIP2DMini2 passingMVAVLooseTightIP2DMini4
+#for i in passingMVAVLooseTightIP2DMini passingMVAVLooseTightIP2DMini2 passingMVAVLooseTightIP2DMini4
+#for i in passingLeptonMvaMIDEmuTightIP2DSIP3D8miniIso04 passingLeptonMvaVTIDEmuTightIP2DSIP3D8miniIso04 passingLeptonMvaM passingLeptonMvaVT passingLeptonMvaMIDEmuTightIP2DSIP3D8miniIso04New passingLeptonMvaVTIDEmuTightIP2DSIP3D8miniIso04New
 do
     echo "Submitting job to get SF for "$i
     jdl_file="jdl_EGM_SF_${i}_job.jdl"
