@@ -12,11 +12,11 @@ import efficiencyUtils as effUtil
 tdrstyle.setTDRStyle()
 
 
-effiMin = 0.68
-effiMax = 1.07
+effiMin = 0.78
+effiMax = 1.18
 
-sfMin = 0.78
-sfMax = 1.12
+sfMin = 0.58
+sfMax = 1.28
 
 
 def isFloat( myFloat ):
@@ -28,11 +28,13 @@ def isFloat( myFloat ):
 
 
 
-graphColors = [rt.kBlack, rt.kGray+1, rt.kRed +1, rt.kRed-2, rt.kAzure+2, rt.kAzure-1, 
-               rt.kSpring-1, rt.kYellow -2 , rt.kYellow+1,
-               rt.kBlack, rt.kBlack, rt.kBlack, 
+#graphColors = [rt.kBlack, rt.kGray+1, rt.kRed +1, rt.kRed-2, rt.kAzure+2, rt.kAzure-1, 
+#               rt.kSpring-1, rt.kYellow -2 , rt.kYellow+1,
+#               rt.kBlack, rt.kBlack, rt.kBlack, 
+#               rt.kBlack, rt.kBlack, rt.kBlack, rt.kBlack, rt.kBlack, rt.kBlack, rt.kBlack ]
+graphColors = [rt.kBlack, rt.kRed +1, rt.kAzure+2, rt.kSpring-1, rt.kYellow -2 , rt.kMagenta,
+               rt.kRed-2, rt.kYellow+1, rt.kBlack, rt.kBlack, rt.kBlack, 
                rt.kBlack, rt.kBlack, rt.kBlack, rt.kBlack, rt.kBlack, rt.kBlack, rt.kBlack ]
-
 
 
 
@@ -112,12 +114,12 @@ def EffiGraph1D(effDataList, effMCList, sfList ,nameout, xAxis = 'pT', yAxis = '
     listOfTGraph2 = []
     listOfMC      = []
 
-    xMin = 5
+    xMin = 10
     xMax = 200
     if 'pT' in xAxis or 'pt' in xAxis:
         p1.SetLogx()
         p2.SetLogx()    
-        xMin = 5
+        xMin = 10
         xMax = 500
     elif 'vtx' in xAxis or 'Vtx' in xAxis or 'PV' in xAxis:
         xMin =  3
@@ -132,11 +134,14 @@ def EffiGraph1D(effDataList, effMCList, sfList ,nameout, xAxis = 'pT', yAxis = '
     effminmax =  findMinMax( effDataList )
     effiMin = effminmax[0]
     effiMax = effminmax[1]
+#    effiMin = 0.05
+#    effiMax = 1.5
 
     sfminmax =  findMinMax( sfList )
-    sfMin = sfminmax[0]
-#    sfMin = 0.94
-#    sfMax = 1.02
+#    sfMin = sfminmax[0]
+#    sfMin = sfminmax[1]
+#    sfMax = 1.1
+#    sfMin = 0.85
 
     for key in sorted(effDataList.keys()):
         grBinsEffData = effUtil.makeTGraphFromList(effDataList[key], 'min', 'max')

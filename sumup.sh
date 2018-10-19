@@ -4,10 +4,13 @@
 #extraInfo="${1}: SF is w.r.t MVA Tight ID + ID Emu + TightIP2D + TightIP3D + ConvVeto + MissHits<2. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
 #extraInfo="${1}: SF is w.r.t MVA VLoose ID + IP2D"
 #extraInfo="${1}: SF is w.r.t MVA Tight ID + ID Emu + TightIP2D + TightIP3D. Using V3 ntuples made from CMSSW_9_4_7"
+#extraInfo="${1}: SF is w.r.t MVA Tight ID + ID Emu + TightIP2D + TightIP3D. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs. RunC data only"
 #extraInfo="${1}: SF is w.r.t MVA Tight ID + ID Emu + TightIP2D + TightIP3D. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
 #extraInfo="${1}: SF is w.r.t Reco electrons. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
 #extraInfo="${1}: SF is w.r.t MVA VLoose ID + IP2D. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
-extraInfo="${1}: SF is w.r.t CutBasedTightNoIso94X. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
+#extraInfo="${1}: SF is w.r.t CutBasedTightNoIso94X. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
+#extraInfo="${1}: SF is w.r.t MVA Tight ID + TightIP2D + TightIP3D + IDEmu + ConvVeto + MissHits==0. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
+extraInfo="${1}: SF is w.r.t CutBasedTightNoIso94X(v1 or v2). Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs. Trees have bug, used cut string"
 #for i in passingVeto94X passingLoose94X passingMedium94X passingTight94X passingMVA94Xwp90noiso passingMVATightNew2 passingMVALooseNew passingMVALooseFONew
 #for i in passingMVA94Xwp90iso passingMVATightNew2 passingMVAVLooseNew passingMVAVLooseFONew
 #for i in passingMVATightNewTightIP2D3D
@@ -21,8 +24,10 @@ extraInfo="${1}: SF is w.r.t CutBasedTightNoIso94X. Using V4 ntuples made from C
 #for i in passingCutBasedLooseNoIso94X passingCutBasedMediumNoIso94X passingCutBasedTightNoIso94X passingCutBasedVetoNoIso94X
 #for i in passingMVAVLooseNewIP2D passingMVAVLooseFONewIP2DIDEmu passingMVATightNewTightIP2D3D passingMVATightNew2IP2D3DIDEmu
 #for i in passingMVAVLooseTightIP2DMini passingMVAVLooseTightIP2DMini2 passingMVAVLooseTightIP2DMini4
-#for i in passing3Qagree2
-for i in passingMini
+#for i in passingMini
+#for i in passing3Qagree
+#for i in passingConvIHit0
+for i in passingCutBasedVetoNoIso94XV2 passingCutBasedLooseNoIso94XV2 passingCutBasedMediumNoIso94XV2 passingCutBasedTightNoIso94XV2 passingCutBasedVetoNoIso94XV1 passingCutBasedLooseNoIso94XV1 passingCutBasedMediumNoIso94XV1 passingCutBasedTightNoIso94XV1
 do
     echo "======================= Summing it up for "$i
     tar -xf results_$i.tar
