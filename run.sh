@@ -8,7 +8,7 @@ myWP=$1
 #extraInfo="${1}: SF is w.r.t MVA VLoose ID + IP2D. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
 #extraInfo="${1}: SF is w.r.t reco electrons. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
 #extraInfo="${1}: SF is w.r.t MVA Tight ID + ID Emu + TightIP2D + TightIP3D + ConvVeto + MissHits<2. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
-extraInfo="${1}: SF is w.r.t CutBasedTightNoIso94X(v1 or v2). Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs. Trees have bug, used cut string"
+extraInfo="${1}: SF is w.r.t reco electrons. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs. Trees have bug, used cut string"
 #extraInfo="${1}: SF is w.r.t MVA Tight ID + TightIP2D + TightIP3D + IDEmu + ConvVeto + MissHits==0. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
 #extraInfo="${1}: SF is w.r.t MVA Tight ID + ID Emu + TightIP2D + TightIP3D. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs. RunC data only"
 echo "000000000000000000000 Running tool for WP "$myWP

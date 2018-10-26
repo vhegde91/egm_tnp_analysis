@@ -10,7 +10,7 @@
 #extraInfo="${1}: SF is w.r.t MVA VLoose ID + IP2D. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
 #extraInfo="${1}: SF is w.r.t CutBasedTightNoIso94X. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
 #extraInfo="${1}: SF is w.r.t MVA Tight ID + TightIP2D + TightIP3D + IDEmu + ConvVeto + MissHits==0. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
-extraInfo="${1}: SF is w.r.t CutBasedTightNoIso94X(v1 or v2). Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs. Trees have bug, used cut string"
+extraInfo="${1}: SF is w.r.t reco electrons. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs. Trees have bug, used cut string"
 #for i in passingVeto94X passingLoose94X passingMedium94X passingTight94X passingMVA94Xwp90noiso passingMVATightNew2 passingMVALooseNew passingMVALooseFONew
 #for i in passingMVA94Xwp90iso passingMVATightNew2 passingMVAVLooseNew passingMVAVLooseFONew
 #for i in passingMVATightNewTightIP2D3D
