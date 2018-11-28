@@ -15,7 +15,7 @@ tdrstyle.setTDRStyle()
 effiMin = 0.78
 effiMax = 1.18
 
-sfMin = 0.58
+sfMin = 0.68
 sfMax = 1.28
 
 
@@ -134,8 +134,8 @@ def EffiGraph1D(effDataList, effMCList, sfList ,nameout, xAxis = 'pT', yAxis = '
     effminmax =  findMinMax( effDataList )
     effiMin = effminmax[0]
     effiMax = effminmax[1]
-#    effiMin = 0.05
-#    effiMax = 1.5
+#    effiMin = 0.58
+#    effiMax = 1.38
 
     sfminmax =  findMinMax( sfList )
 #    sfMin = sfminmax[0]
@@ -184,6 +184,25 @@ def EffiGraph1D(effDataList, effMCList, sfList ,nameout, xAxis = 'pT', yAxis = '
         grBinsEffData.GetHistogram().GetYaxis().SetTitle("Data efficiency" )
         grBinsEffData.GetHistogram().GetYaxis().SetRangeUser( effiMin, effiMax )
 
+        lineAt0p4 = rt.TLine(xMin,0.4,xMax,0.4)
+        lineAt0p4.SetLineStyle(rt.kDotted)
+        lineAt0p4.SetLineWidth(1)
+        lineAt0p4.SetLineColor(rt.kGray+1)
+
+        lineAt0p6 = rt.TLine(xMin,0.6,xMax,0.6)
+        lineAt0p6.SetLineStyle(rt.kDotted)
+        lineAt0p6.SetLineWidth(1)
+        lineAt0p6.SetLineColor(rt.kGray+1)
+
+        lineAt0p8 = rt.TLine(xMin,0.8,xMax,0.8)
+        lineAt0p8.SetLineStyle(rt.kDotted)
+        lineAt0p8.SetLineWidth(1)
+        lineAt0p8.SetLineColor(rt.kGray+1)
+
+        lineAt1p0 = rt.TLine(xMin,1.0,xMax,1.0)
+        lineAt1p0.SetLineStyle(rt.kDotted)
+        lineAt1p0.SetLineWidth(1)
+        lineAt1p0.SetLineColor(rt.kGray+1)
             
         ### to avoid loosing the TGraph keep it in memory by adding it to a list
         listOfTGraph1.append( grBinsEffData )
@@ -216,6 +235,10 @@ def EffiGraph1D(effDataList, effMCList, sfList ,nameout, xAxis = 'pT', yAxis = '
         listOfTGraph1[use_igr].GetHistogram().SetMaximum(effiMax)
         p1.cd()
         listOfTGraph1[use_igr].Draw(option)
+        lineAt0p4.Draw()
+        lineAt0p6.Draw()
+        lineAt0p8.Draw()
+        lineAt1p0.Draw()
         if not listOfMC[use_igr] is None:
             listOfMC[use_igr].Draw("ez")
 
@@ -228,14 +251,19 @@ def EffiGraph1D(effDataList, effMCList, sfList ,nameout, xAxis = 'pT', yAxis = '
             listOfTGraph2[use_igr].GetHistogram().GetXaxis().SetMoreLogLabels()
         listOfTGraph2[use_igr].GetHistogram().GetXaxis().SetNoExponent()
         listOfTGraph2[use_igr].Draw(option)
-        
 
     lineAtOne = rt.TLine(xMin,1,xMax,1)
     lineAtOne.SetLineStyle(rt.kDashed)
     lineAtOne.SetLineWidth(2)
+
+    lineAt0p95 = rt.TLine(xMin,0.95,xMax,0.95)
+    lineAt0p95.SetLineStyle(rt.kDashed)
+    lineAt0p95.SetLineWidth(1)
+    lineAt0p95.SetLineColor(rt.kGray+1)
     
     p2.cd()
     lineAtOne.Draw()
+    lineAt0p95.Draw()
 
     c.cd()
     p2.Draw()

@@ -1,1 +1,9 @@
 *.pyc
+results*
+*.root
+*.d
+*.so
+*.pcm
+*_org
+*.tar
+libPython/build/
