@@ -1,1 +1,9 @@
 *.pyc
+*.d
+*.so
+*.pcm
+libPython/build/
+*.root
+*.tar
+results*
+*#

@@ -21,7 +21,7 @@ flags = {
     'passingMVATightNewTightIP2D3D' : '((( abs(el_eta) < 0.8 && el_pt >=10 && el_pt < 25 && el_MVA94Xnoiso > (0.2 + (0.032)*(el_pt-10.))) || ( abs(el_eta) < 0.8 && el_pt >= 25 && el_MVA94Xnoiso > 0.68) || ( abs(el_eta) >= 0.8 && abs(el_eta) < 1.479 && el_pt >=10 && el_pt < 25 && el_MVA94Xnoiso > (0.1 + (0.025)*(el_pt-10.))) || ( abs(el_eta) >= 0.8 && abs(el_eta) < 1.479 && el_pt >= 25 && el_MVA94Xnoiso > 0.475) || ( abs(el_eta) >= 1.479 && abs(el_eta) < 2.5 && el_pt >=10 && el_pt < 25 && el_MVA94Xnoiso > (-0.1 + (0.028)*(el_pt-10.))) || ( abs(el_eta) >= 1.479 && abs(el_eta) < 2.5 && el_pt >= 25 && el_MVA94Xnoiso > 0.32)) && passingTightIP2D && passingTightIP3D)',
     }
 
-baseOutDir = 'results/Moriond18/tnpEleID/runBCDEF/'
+baseOutDir = 'results/Legacy16/tnpEleID/runBCDEFGH/'
 
 #############################################################
 ########## samples definition  - preparing the samples
@@ -32,17 +32,19 @@ import etc.inputs.tnpSampleDef as tnpSamples
 tnpTreeDir = 'tnpEleIDs'
 
 samplesDef = {
-    'data'   : tnpSamples.Moriond18_94X['data_Run2017B'].clone(),
-    'mcNom'  : tnpSamples.Moriond18_94X['DY_madgraph'].clone(),
-    'mcAlt'  : tnpSamples.Moriond18_94X['DY_amcatnlo_Moriond18'].clone(),
-    'tagSel' : tnpSamples.Moriond18_94X['DY_madgraph'].clone(),
+    'data'   : tnpSamples.Legacy16_102X['data_Run2016B'].clone(),
+    'mcNom'  : tnpSamples.Legacy16_102X['DY_madgraph'].clone(),
+    'mcAlt'  : tnpSamples.Legacy16_102X['DY_amcatnlo_Legacy16'].clone(),
+    'tagSel' : tnpSamples.Legacy16_102X['DY_madgraph'].clone(),
 }
 
 ## can add data sample easily
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017C'] )
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017D'] )
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017E'] )
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017F'] )
+samplesDef['data'].add_sample( tnpSamples.Legacy16_102X['data_Run2016C'] )
+samplesDef['data'].add_sample( tnpSamples.Legacy16_102X['data_Run2016D'] )
+samplesDef['data'].add_sample( tnpSamples.Legacy16_102X['data_Run2016E'] )
+samplesDef['data'].add_sample( tnpSamples.Legacy16_102X['data_Run2016F'] )
+samplesDef['data'].add_sample( tnpSamples.Legacy16_102X['data_Run2016G'] )
+samplesDef['data'].add_sample( tnpSamples.Legacy16_102X['data_Run2016H'] )
 
 ## some sample-based cuts... general cuts defined here after
 ## require mcTruth on MC DY samples and additional cuts
@@ -68,13 +70,13 @@ if not samplesDef['tagSel'] is None:
 #if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
 
 ## set MC weight, can use several pileup rw for different data taking periods
-weightName = 'weights_2017_runBCDEF.totWeight'
+weightName = 'weights_2016.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
-if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/vhegde/public/EGamma_v3/withSUSYids_v1/EGamma_ntuples/Moriond18_V1/PU/mc-V2-customW/DY_madgraph_ele.pu.puTree.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/vhegde/public/EGamma_v3/withSUSYids_v1/EGamma_ntuples/Moriond18_V1/PU/mc-V2-customW/DY_amcatnlo_Moriond18_ele.pu.puTree.root')
-if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/vhegde/public/EGamma_v3/withSUSYids_v1/EGamma_ntuples/Moriond18_V1/PU/mc-V2-customW/DY_madgraph_ele.pu.puTree.root')
+if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/vhegde/public/EGamma_v3/withSUSYids_v1/EGamma_ntuples/Legacy16_V1/PU/mc-V2-customW/DY_madgraph_ele.pu.puTree.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/vhegde/public/EGamma_v3/withSUSYids_v1/EGamma_ntuples/Legacy16_V1/PU/mc-V2-customW/DY_amcatnlo_Legacy16_ele.pu.puTree.root')
+if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/vhegde/public/EGamma_v3/withSUSYids_v1/EGamma_ntuples/Legacy16_V1/PU/mc-V2-customW/DY_madgraph_ele.pu.puTree.root')
 
 
 #############################################################
