@@ -8,9 +8,11 @@
 #extraInfo="${1}: SF is w.r.t MVA Tight ID + ID Emu + TightIP2D + TightIP3D. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
 #extraInfo="${1}: SF is w.r.t Reco electrons. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
 #extraInfo="${1}: SF is w.r.t MVA VLoose ID + IP2D. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
-#extraInfo="${1}: SF is w.r.t CutBasedTightNoIso94X. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
+extraInfo="${1}: SF is w.r.t CutBasedTightNoIso94XV1. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
 #extraInfo="${1}: SF is w.r.t MVA Tight ID + TightIP2D + TightIP3D + IDEmu + ConvVeto + MissHits==0. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
-extraInfo="${1}: SF is w.r.t reco electrons. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs. Trees have bug, used cut string"
+#extraInfo="${1}: SF is w.r.t reco electrons. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs. Updated Trees with new cutbasedID branches by using V4 trees"
+#extraInfo="${1}: SF is w.r.t reco electrons. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs. checking the effect of event_rho vs rho by taking a few bins"
+#extraInfo="${1}: SF is w.r.t reco electrons. Using V4 ntuples made from CMSSW_9_4_7 with 31Mar18_miniaod and latest GTs"
 #for i in passingVeto94X passingLoose94X passingMedium94X passingTight94X passingMVA94Xwp90noiso passingMVATightNew2 passingMVALooseNew passingMVALooseFONew
 #for i in passingMVA94Xwp90iso passingMVATightNew2 passingMVAVLooseNew passingMVAVLooseFONew
 #for i in passingMVATightNewTightIP2D3D
@@ -24,10 +26,13 @@ extraInfo="${1}: SF is w.r.t reco electrons. Using V4 ntuples made from CMSSW_9_
 #for i in passingCutBasedLooseNoIso94X passingCutBasedMediumNoIso94X passingCutBasedTightNoIso94X passingCutBasedVetoNoIso94X
 #for i in passingMVAVLooseNewIP2D passingMVAVLooseFONewIP2DIDEmu passingMVATightNewTightIP2D3D passingMVATightNew2IP2D3DIDEmu
 #for i in passingMVAVLooseTightIP2DMini passingMVAVLooseTightIP2DMini2 passingMVAVLooseTightIP2DMini4
-#for i in passingMini
+for i in passingMini
 #for i in passing3Qagree
 #for i in passingConvIHit0
-for i in passingCutBasedVetoNoIso94XV2 passingCutBasedLooseNoIso94XV2 passingCutBasedMediumNoIso94XV2 passingCutBasedTightNoIso94XV2 passingCutBasedVetoNoIso94XV1 passingCutBasedLooseNoIso94XV1 passingCutBasedMediumNoIso94XV1 passingCutBasedTightNoIso94XV1
+#for i in passingCutBasedVetoNoIso94XV2 passingCutBasedLooseNoIso94XV2 passingCutBasedMediumNoIso94XV2 passingCutBasedTightNoIso94XV2 passingCutBasedVetoNoIso94XV1 passingCutBasedLooseNoIso94XV1 passingCutBasedMediumNoIso94XV1 passingCutBasedTightNoIso94XV1
+#for i in passingCutBasedVetoNoIso94XV2 passingCutBasedLooseNoIso94XV2 passingCutBasedMediumNoIso94XV2 passingCutBasedTightNoIso94XV2
+#for i in passingTight94X passingMedium94X
+#for i in passingCBTightNoIso94XV1_eventRho passingCBTightNoIso94XV1_rho
 do
     echo "======================= Summing it up for "$i
     tar -xf results_$i.tar
