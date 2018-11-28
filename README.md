@@ -162,6 +162,17 @@ to the fitter. One can handle complex flags with a cut string (root cut string):
 
 ##  Update PU weights 
 
+Get the data PU profile histogram using
+
+```
+pileupCalc.py -i myJSON_for_20XX_data.txt --inputLumiJSON data_20XX_pileup_latest.txt  --calcMode true --minBiasXsec 69200 --maxPileupBin 100 --numPileupBins 100 pileup_20XX.root
+```
+The above command works well on lxplus. From this you will get a root file with data pileup profile. This will be used for next step.
+
+Use [puTreeMaker.C](./puTreeMaker.C) file for getting PU trees for MC samples. For every MC sample that is in use you need to generate a PU tree. There should be one-to-one matching between truePU and weight, totalweight entry in PU tree. To achieve this use this [puTreeMaker.C](./puTreeMaker.C) script. First specify the MC file name inside this file. Then choose the year of data according to the need and put the correct data PU root file name that you got from previous step. If needed change MC PU mixing scenario mentioned in the script using http://cmslxr.fnal.gov/source/SimGeneral/MixingModule/python/
+
+#### Ignore the EGM PU recipe given below. It hardly works well.
+
 1. Pileup files have to be computed with: python etc/scripts/pureweight.py
 
 Here one has to update the name of the directory whre the files will be located and the corresponding names.
