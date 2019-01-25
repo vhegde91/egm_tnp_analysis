@@ -1,5 +1,13 @@
 # egm_tnp_analysis
 
+This code is taken from official EGM TnP setup. The instructions remain the same as EGM, but some modifications are done to submit condor jobs and to take care of SUSY IDs. There are different settings_ele*.py files inside etc/config/ for various IDs. 
+For ex, you want to get SFs for CutBasedTightNoIsoID, then copy the corresponding settings file to etc/config/settings_ele.py. Then use run.sh with ID name as arguement for doing all fits in one go, or follow EGM instructuctions one by one.
+
+>cp etc/config/settings_ele_wrtReco.py etc/config/settings_ele.py
+>./run.sh passingCutBasedTightNoIso94XV2
+
+Note: In run.sh, edit extraInfo for book-keeping purpose. Also summing up (final step after doing all fits) should be done manually.
+
 ## General note on installation
 
 This code can in principle run on your laptop but you need ROOT 6.10 or higher and RooFit installed to use some advanced features when creating histograms.
