@@ -5,7 +5,10 @@ tar cf egm_tnp_analysis.tar etc libCpp libPython Makefile tnpEGM_fitter.py run.s
 exeAtWorker="workerEGM.sh"
 filesToTransfer="egm_tnp_analysis.tar"
 
-for i in passingCutBasedVetoNoIso94XV2 passingCutBasedLooseNoIso94XV2 passingCutBasedMediumNoIso94XV2 passingCutBasedTightNoIso94XV2 passingTight94XV2
+#for i in passingCutBasedVetoNoIso94XV2 passingCutBasedLooseNoIso94XV2 passingCutBasedMediumNoIso94XV2 passingCutBasedTightNoIso94XV2 passingTight94XV2
+#for i in passingMVATightTightIP2D3D passingMVATightIP2D3DIDEmu passingMVAVLooseIP2D passingMVAVLooseFOIP2DIDEmu
+#for i in passingMini passingMini2 passingMini4
+for i in passingMultiIsoM passingMultiIsoT passingMultiIsoEmu passingConvIHit0
 do
     echo "Submitting job to get SF for "$i
     jdl_file="jdl_EGM_SF_${i}_job.jdl"

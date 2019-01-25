@@ -7,7 +7,7 @@ from libPython.tnpClassUtils import tnpSample
 #eosWinter17 = 'eos/cms/store/group/phys_egamma/tnp/80X/PhoEleIDs/Moriond17_v1/'
 eosLegacy16 = 'root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Run2016_17Jul2018_MiniAODv3_TreeV1/'
 
-Legacy16_94X = {
+Legacy16_102X = {
     ### MiniAOD TnP for IDs scale factors
     'DY_madgraph'          : tnpSample('DY_madgraph',
                                        eosLegacy16 + 'mc/TnPTree_mc_DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_allExt.root',
