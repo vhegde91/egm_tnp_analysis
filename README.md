@@ -4,9 +4,12 @@ This code is taken from official EGM TnP setup. The instructions remain the same
 For ex, you want to get SFs for CutBasedTightNoIsoID, then copy the corresponding settings file to etc/config/settings_ele.py. Then use run.sh with ID name as arguement for doing all fits in one go, or follow EGM instructuctions one by one.
 
 >cp etc/config/settings_ele_wrtReco.py etc/config/settings_ele.py
+
 >./run.sh passingCutBasedTightNoIso94XV2
 
-Note: In run.sh, edit extraInfo for book-keeping purpose. Also summing up (final step after doing all fits) should be done manually.
+Note: In run.sh, edit extraInfo for book-keeping purpose. Also summing up (final step after doing all fits) should be done manually, or edit sumup.sh file according to the ID.
+
+>./sumup.sh
 
 ## General note on installation
 
