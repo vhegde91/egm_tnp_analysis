@@ -10,7 +10,8 @@ flags = {
     'passingVeto94X'    : '(passingVeto94X   == 1)',
     'passingMini'       : '(passingMini == 1)',
     'passingMini2'      : '(passingMini2 == 1)',
-    'passingMini4'      : '(passingMini4 == 1)'
+    'passingMini4'      : '(passingMini4 == 1)',
+    'passingConvIHit1'  : '(passingConvIHit1 == 1)',
     }
 
 baseOutDir = 'results/Legacy16/tnpEleID/runBCDEFGH/'

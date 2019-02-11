@@ -7,12 +7,7 @@ cutpass90 = '(( abs(probe_sc_eta) < 0.8 && probe_Ele_nonTrigMVA > %f ) ||  ( abs
 
 # flag to be Tested
 flags = {
-    'passingMultiIsoM'  : '(passingMultiIsoM == 1)',  
-    'passingMultiIsoT'  : '(passingMultiIsoT == 1)',
-    'passingMultiIsoEmu': '(passingMultiIsoEmu  == 1)',
-    'passingConvIHit0'  : '(passingConvIHit0 ==1)',
-    'passingMultiIsoNew': '((el_miniIsoAll/el_pt)<0.09)&&(el_ptRatio>0.85||el_ptRel>9.2)',
-    'passingConvIHit1'  : '(passingConvIHit1 == 1)',
+    'passing3Qagree'  : '(passingCharge ==1)',
     }
 
 baseOutDir = 'results/Legacy16/tnpEleID/runBCDEFGH/'
@@ -87,7 +82,7 @@ biningDef = [
 ########## Cuts definition for all samples
 #############################################################
 ### cut
-cutBase   = 'tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && el_q*tag_Ele_q < 0 && ( ((el_abseta < 0.8 && el_pt >=10 && el_pt < 40 && el_noIsoMVA94XV2 >  (3.447 + 0.063*(el_pt - 25))) || (el_abseta < 0.8 && el_pt >=40 && el_noIsoMVA94XV2 > 4.392) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=10 && el_pt < 40 && el_noIsoMVA94XV2 > (2.522 + 0.058*(el_pt - 25))) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=40 && el_noIsoMVA94XV2 > 3.392) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=10 && el_pt < 40 && el_noIsoMVA94XV2 > (1.555 + 0.075*(el_pt - 25))) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=40 && el_noIsoMVA94XV2 > 2.680)) &&  passingTightIP2D && passingTightIP3D && passingIDEmu)'
+cutBase   = 'tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && el_q*tag_Ele_q < 0 && ( ((el_abseta < 0.8 && el_pt >=10 && el_pt < 40 && el_noIsoMVA94XV2 >  (3.447 + 0.063*(el_pt - 25))) || (el_abseta < 0.8 && el_pt >=40 && el_noIsoMVA94XV2 > 4.392) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=10 && el_pt < 40 && el_noIsoMVA94XV2 > (2.522 + 0.058*(el_pt - 25))) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=40 && el_noIsoMVA94XV2 > 3.392) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=10 && el_pt < 40 && el_noIsoMVA94XV2 > (1.555 + 0.075*(el_pt - 25))) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=40 && el_noIsoMVA94XV2 > 2.680)) &&  passingTightIP2D && passingTightIP3D && passingIDEmu && (el_mHits==0) && passingConvVeto)'
 
 # can add addtionnal cuts for some bins (first check bin number using tnpEGM --checkBins)
 additionalCuts = { 

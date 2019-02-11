@@ -1,8 +1,9 @@
 #!/bin/bash 
 myWP=$1
-#extraInfo="${1}: SF is w.r.t reco e. Trees from Run2016_17Jul2018_MiniAODv3_TreeV1"
+#extraInfo="${1}: SF is w.r.t reco electrons. Using Trees from Run2016_17Jul2018_MiniAODv3_TreeV1. Fixed missHits bug for CB IDs."
 #extraInfo="${1}: SF is w.r.t MVA VLoose + TightIP 2D. Using Trees from Run2016_17Jul2018_MiniAODv3_TreeV1"
-extraInfo="${1}: SF is w.r.t MVA Tight ID + ID Emu + TightIP2D + TightIP3D. Using Trees from Run2016_17Jul2018_MiniAODv3_TreeV1"
+#extraInfo="${1}: SF is w.r.t MVA Tight ID + ID Emu + TightIP2D + TightIP3D. Using Trees from Run2016_17Jul2018_MiniAODv3_TreeV1"
+extraInfo="${1}: SF is w.r.t MVA Tight ID + ID Emu + TightIP2D + TightIP3D + ConvVeto + MissHits==0. Using Trees from Run2016_17Jul2018_MiniAODv3_TreeV1"
 echo "000000000000000000000 Running tool for WP "$myWP
 echo $extraInfo
 echo "11111111111111 Checking bins 11111111111111"
