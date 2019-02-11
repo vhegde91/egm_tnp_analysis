@@ -1,6 +1,9 @@
 #!/bin/bash 
 myWP=$1
-extraInfo="${1}: SF is w.r.t reco e. Trees from Run2018_Partial_TreeV1 Re-reco of ABC, prompt reco of D"
+#extraInfo="${1}: SF is w.r.t reco e. Trees from Run2018_Partial_TreeV1 Re-reco of ABC, prompt reco of D. Fixed bug of missHits in CB IDs."
+#extraInfo="${1}: SF is w.r.t MVA VLoose ID + TightIP2D. Trees from Run2018_Partial_TreeV1 Re-reco of ABC, prompt reco of D"
+#extraInfo="${1}: SF is w.r.t MVA Tight ID + TightIP2D + TightIP3D + ID Emu. Trees from Run2018_Partial_TreeV1 Re-reco of ABC, prompt reco of D"
+extraInfo="${1}: SF is w.r.t MVA Tight ID + TightIP2D + TightIP3D + ID Emu + ConvVeto + MissHits = 0. Trees from Run2018_Partial_TreeV1 Re-reco of ABC, prompt reco of D"
 echo "000000000000000000000 Running tool for WP "$myWP
 echo $extraInfo
 echo "11111111111111 Checking bins 11111111111111"

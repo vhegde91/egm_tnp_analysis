@@ -8,17 +8,12 @@ cutpass90 = '(( abs(probe_sc_eta) < 0.8 && probe_Ele_nonTrigMVA > %f ) ||  ( abs
 # flag to be Tested
 flags = {
     'passingVeto94X'    : '(passingVeto94X   == 1)',
-    'passingLoose94X'   : '(passingLoose94X  == 1)',
-    'passingMedium94X'  : '(passingMedium94X == 1)',
-    'passingTight94X'   : '(passingTight94X  == 1)',
-    'passingMVA94Xwp80iso' : '(passingMVA94Xwp80iso == 1)',
-    'passingMVA94Xwp90iso' : '(passingMVA94Xwp90iso == 1)',
-    'passingMVA94Xwp80noiso' : '(passingMVA94Xwp80noiso == 1)',
-    'passingMVA94Xwp90noiso' : '(passingMVA94Xwp90noiso == 1)',
-    'passingMini'  : '(passingMini ==1)',
+    'passingMini'       : '(passingMini == 1)',
+    'passingMini2'      : '(passingMini2 == 1)',
+    'passingMini4'      : '(passingMini4 == 1)'
     }
 
-baseOutDir = 'results/Moriond18/tnpEleID/runBCDEF/'
+baseOutDir = 'results/Moriond19/tnpEleID/runABCD/'
 
 #############################################################
 ########## samples definition  - preparing the samples
@@ -29,17 +24,16 @@ import etc.inputs.tnpSampleDef as tnpSamples
 tnpTreeDir = 'tnpEleIDs'
 
 samplesDef = {
-    'data'   : tnpSamples.Moriond18_94X['data_Run2017B'].clone(),
-    'mcNom'  : tnpSamples.Moriond18_94X['DY_madgraph'].clone(),
-    'mcAlt'  : tnpSamples.Moriond18_94X['DY_amcatnlo_Moriond18'].clone(),
-    'tagSel' : tnpSamples.Moriond18_94X['DY_madgraph'].clone(),
+    'data'   : tnpSamples.Moriond19_10X['data_Run2018A'].clone(),
+    'mcNom'  : tnpSamples.Moriond19_10X['DY_madgraph'].clone(),
+    'mcAlt'  : tnpSamples.Moriond19_10X['DY_powheg'].clone(),
+    'tagSel' : tnpSamples.Moriond19_10X['DY_madgraph_Moriond19'].clone(),
 }
 
 ## can add data sample easily
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017C'] )
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017D'] )
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017E'] )
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017F'] )
+samplesDef['data'].add_sample( tnpSamples.Moriond19_10X['data_Run2018B'] )
+samplesDef['data'].add_sample( tnpSamples.Moriond19_10X['data_Run2018C'] )
+samplesDef['data'].add_sample( tnpSamples.Moriond19_10X['data_Run2018D'] )
 
 ## some sample-based cuts... general cuts defined here after
 ## require mcTruth on MC DY samples and additional cuts
@@ -65,13 +59,13 @@ if not samplesDef['tagSel'] is None:
 #if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
 
 ## set MC weight, can use several pileup rw for different data taking periods
-weightName = 'weights_2017_runBCDEF.totWeight'
+weightName = 'weights_2018.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
-if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/vhegde/public/EGamma_v3/withSUSYids_v3/EGamma_ntuples/Moriond18_V4/PU/mc-V2-customW/DY_madgraph_ele.pu.puTree.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/vhegde/public/EGamma_v3/withSUSYids_v3/EGamma_ntuples/Moriond18_V4/PU/mc-V2-customW/DY_amcatnlo_Moriond18_ele.pu.puTree.root')
-if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/vhegde/public/EGamma_v3/withSUSYids_v3/EGamma_ntuples/Moriond18_V4/PU/mc-V2-customW/DY_madgraph_ele.pu.puTree.root')
+if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Run2018_Partial_TreeV1/PU/DYJetsToLL_madgraph_PU_profileTree2018.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Run2018_Partial_TreeV1/PU/DYToEE_powheg_PU_profileTree2018.root')
+if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Run2018_Partial_TreeV1/PU/DYJetsToLL_madgraph_PU_profileTree2018.root')
 
 
 #############################################################
@@ -88,7 +82,7 @@ biningDef = [
 ########## Cuts definition for all samples
 #############################################################
 ### cut
-cutBase   = 'tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && el_q*tag_Ele_q < 0 && (passingCutBasedTightNoIso94X==1)'
+cutBase   = 'tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && el_q*tag_Ele_q < 0 && (((el_abseta < 0.8 && el_pt >=5 && el_pt < 10 && el_noIsoMVA94XV2 > 1.320) || (el_abseta < 0.8 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 >  (1.204 + 0.066*(el_pt - 25))) || (el_abseta < 0.8 && el_pt >=25 && el_noIsoMVA94XV2 > 1.204) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=5 && el_pt < 10 && el_noIsoMVA94XV2 > 0.192) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 > (0.084 + 0.033*(el_pt - 25))) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=25 && el_noIsoMVA94XV2 > 0.084) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=5 && el_pt < 10 && el_noIsoMVA94XV2 > 0.362) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 > (-0.123 + 0.053*(el_pt - 25))) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=25 && el_noIsoMVA94XV2 > -0.123)) && passingTightIP2D)'
 # can add addtionnal cuts for some bins (first check bin number using tnpEGM --checkBins)
 additionalCuts = { 
     0 : 'tag_Ele_trigMVA > 0.92 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45',

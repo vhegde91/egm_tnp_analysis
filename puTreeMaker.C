@@ -21,10 +21,10 @@
 
 void setMCPU(int,vector<float> &);
 void puTreeMaker(){
-  int dataYear = 2016;
-  TString mcFile = "root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Run2016_17Jul2018_MiniAODv3_TreeV1/mc/TnPTree_mc_DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_allExt.root";
+  int dataYear = 2018;
+  TString mcFile = "root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Run2018_Partial_TreeV2/mc/TnPTree_mc_DYToEE_M-50_NNPDF31_TuneCP5_13TeV-powheg-pythia8_PartialAll.root";
 
-  TString mcSampleType = "DYJetsToLL";
+  TString mcSampleType = "DYToEE_powheg";
   
   TString dataPUhistName;
   TString outTrFile;

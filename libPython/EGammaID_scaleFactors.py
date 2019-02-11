@@ -441,7 +441,7 @@ if __name__ == "__main__":
 
     CMS_lumi.lumi_13TeV = "5.5 fb^{-1}"
     CMS_lumi.writeExtraText = 1
-    CMS_lumi.lumi_sqrtS = "13 TeV"
+    CMS_lumi.lumi_sqrtS = "(2018) 13 TeV"
     
     axis = ['pT','eta']
     if args.PV:

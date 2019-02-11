@@ -1,4 +1,4 @@
-*.pyc
+B1;3409;0c*.pyc
 results*
 *.root
 *.d
@@ -7,3 +7,10 @@ results*
 *_org
 *.tar
 libPython/build/
+*.jdl
+*.condor
+condor_*.stdout
+condor_*.stderr
+*#
+*~
+*.pyc
