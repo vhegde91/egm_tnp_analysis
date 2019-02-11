@@ -19,9 +19,11 @@ flags = {
     'passingMultiIsoM'  : '(passingMultiIsoM == 1)',  
     'passingMultiIsoT'  : '(passingMultiIsoT == 1)',
     'passingMultiIsoEmu': '(passingMultiIsoEmu  == 1)',
-    'passingConvIHit0'  : '(passingConvIHit0 ==1)',
+    'passingConvIHit0'  : '((el_mHits==0)&&passingConvVeto)',
     'passingMultiIsoNew': '((el_miniIsoAll/el_pt)<0.09)&&(el_ptRatio>0.85||el_ptRel>9.2)',
-    'passingConvIHit1'  : '(passingConvIHit1 == 1)',
+    'passingConvIHit1'  : '((el_mHits<2)&&passingConvVeto)',
+    'passingMultiIsoNewJECv32': '((el_miniIsoAll/el_pt)<0.07)&&(el_ptRatio>0.78||el_ptRel>8.0)',
+    'passingMultiIsoEmuJECv32': '(((el_miniIsoAll/el_pt)<0.07)&&(el_ptRatio>0.78||el_ptRel>8.0)&&passingISOEmu)',
     }
 
 baseOutDir = 'results/Moriond18/tnpEleID/runBCDEF/'
@@ -75,10 +77,9 @@ weightName = 'weights_2017_runBCDEF.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
-if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/vhegde/public/EGamma_v3/withSUSYids_v3/EGamma_ntuples/Moriond18_V4/PU/mc-V2-customW/DY_madgraph_ele.pu.puTree.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/vhegde/public/EGamma_v3/withSUSYids_v3/EGamma_ntuples/Moriond18_V4/PU/mc-V2-customW/DY_amcatnlo_Moriond18_ele.pu.puTree.root')
-if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/FromLxplus/vhegde/public/EGamma_v3/withSUSYids_v3/EGamma_ntuples/Moriond18_V4/PU/mc-V2-customW/DY_madgraph_ele.pu.puTree.root')
-
+if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Moriond18_V5/PU/DYJetsToLL_PU_profileTree2017.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Moriond18_V5/PU/DYJetsToLL_amcatnlo_PU_profileTree2017.root')
+if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Moriond18_V5/PU/DYJetsToLL_PU_profileTree2017.root')
 
 #############################################################
 ########## bining definition  [can be nD bining]
