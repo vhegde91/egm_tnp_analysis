@@ -7,12 +7,11 @@ cutpass90 = '(( abs(probe_sc_eta) < 0.8 && probe_Ele_nonTrigMVA > %f ) ||  ( abs
 
 # flag to be Tested
 flags = {
-    'passingMultiIsoM'  : '(passingMultiIsoM == 1)',  
-    'passingMultiIsoT'  : '(passingMultiIsoT == 1)',
-    'passingMultiIsoEmu': '(passingMultiIsoEmu  == 1)',
     'passingConvIHit0'  : '((el_mHits==0)&&passingConvVeto)',
     'passingMultiIsoNew': '((el_miniIsoAll/el_pt)<0.09)&&(el_ptRatio>0.85||el_ptRel>9.2)',
     'passingConvIHit1'  : '((el_mHits<2)&&passingConvVeto)',
+    'passingMultiIso': '((el_miniIsoAll/el_pt)<0.07)&&(el_ptRatio>0.78||el_ptRel>8.0)',
+    'passingMultiIsoEmu': '(((el_miniIsoAll/el_pt)<0.07)&&(el_ptRatio>0.78||el_ptRel>8.0)&&passingISOEmu)',
     }
 
 baseOutDir = 'results/Moriond19/tnpEleID/runABCD/'
@@ -65,9 +64,9 @@ weightName = 'weights_2018.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
-if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Run2018_Partial_TreeV1/PU/DYJetsToLL_madgraph_PU_profileTree2018.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Run2018_Partial_TreeV1/PU/DYToEE_powheg_PU_profileTree2018.root')
-if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Run2018_Partial_TreeV1/PU/DYJetsToLL_madgraph_PU_profileTree2018.root')
+if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Run2018_Moriond19JEC_TreeV3/PU/DYJetsToLL_PU_profileTree2018.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Run2018_Moriond19JEC_TreeV3/PU/DYToEE_powheg_PU_profileTree2018.root')
+if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('root://cmseos.fnal.gov//store/user/vhegde/EGamma_ntuples/Run2018_Moriond19JEC_TreeV3/PU/DYJetsToLL_PU_profileTree2018.root')
 
 
 #############################################################

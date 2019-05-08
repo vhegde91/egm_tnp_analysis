@@ -6,10 +6,12 @@ exeAtWorker="workerEGM.sh"
 filesToTransfer="egm_tnp_analysis.tar"
 
 #for i in passingCutBasedVetoNoIso94XV2 passingCutBasedLooseNoIso94XV2 passingCutBasedMediumNoIso94XV2 passingCutBasedTightNoIso94XV2
+for i in passingTight94XV2 passingCutBasedTightNoIso94XV2
 #for i in passingMVAVLooseIP2D passingMVAVLooseFOIP2DIDEmu passingMVATightTightIP2D3D passingMVATightIP2D3DIDEmu
 #for i in passingMini passingMini2 passingMini4
 #for i in passingConvIHit0 passingConvIHit1
-for i in passing3Qagree
+#for i in passing3Qagree
+#for i in passingMultiIso passingMultiIsoEmu
 do
     echo "Submitting job to get SF for "$i
     jdl_file="jdl_EGM_SF_${i}_job.jdl"

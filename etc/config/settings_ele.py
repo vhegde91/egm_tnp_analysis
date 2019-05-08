@@ -7,7 +7,38 @@ cutpass90 = '(( abs(probe_sc_eta) < 0.8 && probe_Ele_nonTrigMVA > %f ) ||  ( abs
 
 # flag to be Tested
 flags = {
-    'passing3Qagree'  : '(passingCharge ==1)',
+    'passingVeto94X'    : '(passingVeto94X   == 1)',
+    'passingLoose94X'   : '(passingLoose94X  == 1)',
+    'passingMedium94X'  : '(passingMedium94X == 1)',
+    'passingTight94X'   : '(passingTight94X  == 1)',
+    'passingTight94XV2' : '(passingTight94XV2 == 1)',
+    #'passingCutBasedVetoNoIso94XV1'  : '(passingCutBasedVetoNoIso94XV1 == 1)',
+    #'passingCutBasedLooseNoIso94XV1' : '(passingCutBasedLooseNoIso94XV1 == 1)',
+    #'passingCutBasedMediumNoIso94XV1': '(passingCutBasedMediumNoIso94XV1 == 1)',
+    #'passingCutBasedTightNoIso94XV1' : '(passingCutBasedTightNoIso94XV1 == 1)',
+    #'passingCutBasedVetoNoIso94XV2'  : '(passingCutBasedVetoNoIso94XV2 == 1)',
+    #'passingCutBasedLooseNoIso94XV2' : '(passingCutBasedLooseNoIso94XV2 == 1)',
+    #'passingCutBasedMediumNoIso94XV2': '(passingCutBasedMediumNoIso94XV2 == 1)',
+    #'passingCutBasedTightNoIso94XV2' : '(passingCutBasedTightNoIso94XV2 == 1)',
+    #------------------ CutBasedNoIso94XV2 ---------------------
+    'passingCutBasedVetoNoIso94XV2' : '( (el_sc_abseta<=1.479 && el_5x5_sieie         < 0.012600 && abs(el_dEtaSeed)     < 0.004630 && abs(el_dPhiIn)       < 0.148000 && el_hoe               < (0.05+(1.16/el_sc_e)+(0.0324*event_rho/el_sc_e)) && abs(el_1overEminus1overP) < 0.209000 && el_mHits            <= 2 && passingConvVeto     == 1 && abs(el_dxy)           < 0.050000 && abs(el_dz)           < 0.100000)||(el_sc_abseta>1.479 && el_5x5_sieie         < 0.045700 && abs(el_dEtaSeed)     < 0.008140 && abs(el_dPhiIn)       < 0.190000 && el_hoe               < (0.05+(2.54/el_sc_e)+(0.183*event_rho/el_sc_e)) && abs(el_1overEminus1overP) < 0.132000 && el_mHits            <= 3 && passingConvVeto     == 1 && abs(el_dxy)          < 0.100000 && abs(el_dz)           < 0.200000))',
+    'passingCutBasedLooseNoIso94XV2' : '( (el_sc_abseta<=1.479 && el_5x5_sieie         < 0.011200 && abs(el_dEtaSeed)     < 0.003770 && abs(el_dPhiIn)       < 0.088400 && el_hoe               < (0.05+(1.16/el_sc_e)+(0.0324*event_rho/el_sc_e)) && abs(el_1overEminus1overP) < 0.193000 && el_mHits            <= 1 && passingConvVeto     == 1 && abs(el_dxy)           < 0.050000 && abs(el_dz)           < 0.100000)||(el_sc_abseta>1.479 && el_5x5_sieie         < 0.042500 && abs(el_dEtaSeed)     < 0.006740 && abs(el_dPhiIn)       < 0.169000 && el_hoe               < (0.0441+(2.54/el_sc_e)+(0.183*event_rho/el_sc_e)) && abs(el_1overEminus1overP) < 0.111000 && el_mHits            <= 1 && passingConvVeto     == 1 && abs(el_dxy)          < 0.100000 && abs(el_dz)           < 0.200000))',
+    'passingCutBasedMediumNoIso94XV2' : '( (el_sc_abseta<=1.479 && el_5x5_sieie         < 0.010600 && abs(el_dEtaSeed)     < 0.003200 && abs(el_dPhiIn)       < 0.054700 && el_hoe               < (0.046+(1.16/el_sc_e)+(0.0324*event_rho/el_sc_e)) && abs(el_1overEminus1overP) < 0.184000 && el_mHits            <= 1 && passingConvVeto     == 1 && abs(el_dxy)           < 0.050000 && abs(el_dz)           < 0.100000)||(el_sc_abseta>1.479 && el_5x5_sieie         < 0.038700 && abs(el_dEtaSeed)     < 0.006320 && abs(el_dPhiIn)       < 0.039400 && el_hoe               < (0.0275+(2.52/el_sc_e)+(0.183*event_rho/el_sc_e)) && abs(el_1overEminus1overP) < 0.072100 && el_mHits            <= 1 && passingConvVeto     == 1 && abs(el_dxy)          < 0.100000 && abs(el_dz)           < 0.200000))',
+    'passingCutBasedTightNoIso94XV2' : '( (el_sc_abseta<=1.479 && el_5x5_sieie         < 0.010400 && abs(el_dEtaSeed)     < 0.002550 && abs(el_dPhiIn)       < 0.022000 && el_hoe               < (0.026+(1.15/el_sc_e)+(0.0324*event_rho/el_sc_e)) && abs(el_1overEminus1overP) < 0.159000 && el_mHits            <= 1 && passingConvVeto     == 1 && abs(el_dxy)           < 0.050000 && abs(el_dz)           < 0.100000)||(el_sc_abseta>1.479 && el_5x5_sieie         < 0.035300 && abs(el_dEtaSeed)     < 0.005010 && abs(el_dPhiIn)       < 0.023600 && el_hoe               < (0.0188+(2.06/el_sc_e)+(0.183*event_rho/el_sc_e)) && abs(el_1overEminus1overP) < 0.019700 && el_mHits            <= 1 && passingConvVeto     == 1 && abs(el_dxy)          < 0.100000 && abs(el_dz)           < 0.200000))',
+    'passingCBTightNoIso94XV2' : '( (el_sc_abseta<=1.479 && el_5x5_sieie         < 0.010400 && abs(el_dEtaSeed)     < 0.002550 && abs(el_dPhiIn)       < 0.022000 && el_hoe               < (0.026+(1.15/el_sc_e)+(0.0324*event_rho/el_sc_e)) && abs(el_1overEminus1overP) < 0.159000 && el_mHits            <= 1 && passingConvVeto     == 1 && abs(el_dxy)           < 0.050000 && abs(el_dz)           < 0.100000)||(el_sc_abseta>1.479 && el_5x5_sieie         < 0.035300 && abs(el_dEtaSeed)     < 0.005010 && abs(el_dPhiIn)       < 0.023600 && el_hoe               < (0.0188+(2.06/el_sc_e)+(0.183*event_rho/el_sc_e)) && abs(el_1overEminus1overP) < 0.019700 && el_mHits            <= 1 && passingConvVeto     == 1 && abs(el_dxy)          < 0.100000 && abs(el_dz)           < 0.200000))',
+    'passingMVATight'       : '',
+    'passingMVAVLoose'           : '',
+    'passingMVAVLooseFO'         :'',
+    'passingMVATightTightIP2D3D' : '(((el_abseta < 0.8 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 >  (4.277 + 0.112*(el_pt - 25))) || (el_abseta < 0.8 && el_pt >=25 && el_noIsoMVA94XV2 > 4.277) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 > (3.152 + 0.060*(el_pt - 25))) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=25 && el_noIsoMVA94XV2 > 3.152) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 > (2.359 + 0.087*(el_pt - 25))) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=25 && el_noIsoMVA94XV2 > 2.359)) && passingTightIP2D && passingTightIP3D)',
+    'passingMVATightIP2D3DIDEmu' : '(((el_abseta < 0.8 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 >  (4.277 + 0.112*(el_pt - 25))) || (el_abseta < 0.8 && el_pt >=25 && el_noIsoMVA94XV2 > 4.277) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 > (3.152 + 0.060*(el_pt - 25))) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=25 && el_noIsoMVA94XV2 > 3.152) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 > (2.359 + 0.087*(el_pt - 25))) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=25 && el_noIsoMVA94XV2 > 2.359)) && passingTightIP2D && passingTightIP3D && passingIDEmu)',
+    'passingMVAVLooseIP2D'       : '(((el_abseta < 0.8 && el_pt >=5 && el_pt < 10 && el_noIsoMVA94XV2 > 1.320) || (el_abseta < 0.8 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 >  (1.204 + 0.066*(el_pt - 25))) || (el_abseta < 0.8 && el_pt >=25 && el_noIsoMVA94XV2 > 1.204) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=5 && el_pt < 10 && el_noIsoMVA94XV2 > 0.192) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 > (0.084 + 0.033*(el_pt - 25))) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=25 && el_noIsoMVA94XV2 > 0.084) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=5 && el_pt < 10 && el_noIsoMVA94XV2 > 0.362) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 > (-0.123 + 0.053*(el_pt - 25))) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=25 && el_noIsoMVA94XV2 > -0.123)) && passingTightIP2D)',
+    'passingMVAVLooseFOIP2DIDEmu' :'(((el_abseta < 0.8 && el_pt >=5 && el_pt < 10 && el_noIsoMVA94XV2 > 0.053) || (el_abseta < 0.8 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 >  (-0.106 + 0.062*(el_pt - 25))) || (el_abseta < 0.8 && el_pt >=25 && el_noIsoMVA94XV2 > -0.106) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=5 && el_pt < 10 && el_noIsoMVA94XV2 > -0.434) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 > (-0.769 + 0.038*(el_pt - 25))) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=25 && el_noIsoMVA94XV2 > -0.769) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=5 && el_pt < 10 && el_noIsoMVA94XV2 > -0.956) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 > (-1.461 + 0.042*(el_pt - 25))) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=25 && el_noIsoMVA94XV2 > -1.461)) && passingTightIP2D && passingIDEmu)',
+    'passingLeptonMvaMIDEmuTightIP2DSIP3D8miniIso04'  :  'passingLeptonMvaMIDEmuTightIP2DSIP3D8miniIso04',
+    'passingLeptonMvaVTIDEmuTightIP2DSIP3D8miniIso04' :  'passingLeptonMvaVTIDEmuTightIP2DSIP3D8miniIso04',
+    'passingLeptonMvaM'                               :  'passingLeptonMvaM',
+    'passingLeptonMvaVT'                              :  'passingLeptonMvaVT',
+    'passingLeptonMvaMIDEmuTightIP2DSIP3D8miniIso04New'  :  '((el_MVATTH>0.85) && passingIDEmu && passingTightIP2D && (abs(el_sip3d)<8) && passingMini4)',
+    'passingLeptonMvaVTIDEmuTightIP2DSIP3D8miniIso04New' :  '((el_MVATTH>0.90) && passingIDEmu && passingTightIP2D && (abs(el_sip3d)<8) && passingMini4)',
     }
 
 baseOutDir = 'results/Moriond19/tnpEleID/runABCD/'
@@ -79,7 +110,7 @@ biningDef = [
 ########## Cuts definition for all samples
 #############################################################
 ### cut
-cutBase   = 'tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && el_q*tag_Ele_q < 0 && (((el_abseta < 0.8 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 >  (4.277 + 0.112*(el_pt - 25))) || (el_abseta < 0.8 && el_pt >=25 && el_noIsoMVA94XV2 > 4.277) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 > (3.152 + 0.060*(el_pt - 25))) || (el_abseta >= 0.8 && el_abseta < 1.479 && el_pt >=25 && el_noIsoMVA94XV2 > 3.152) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=10 && el_pt < 25 && el_noIsoMVA94XV2 > (2.359 + 0.087*(el_pt - 25))) || (el_abseta >= 1.479 && el_abseta < 2.5 && el_pt >=25 && el_noIsoMVA94XV2 > 2.359)) && passingTightIP2D && passingTightIP3D && passingIDEmu && (el_mHits==0) && passingConvVeto)'
+cutBase   = 'tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && el_q*tag_Ele_q < 0'
 
 # can add addtionnal cuts for some bins (first check bin number using tnpEGM --checkBins)
 additionalCuts = { 
@@ -121,3 +152,4 @@ tnpParAltBkgFit = [
     "alphaP[0.,-5.,5.]",
     "alphaF[0.,-5.,5.]",
     ]
+        
